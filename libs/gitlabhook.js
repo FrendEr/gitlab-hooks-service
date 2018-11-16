@@ -14,6 +14,7 @@ const dataParser = require('./data-parser');                        // 解析 gi
 const gitCmdsGenerator = require('./git-cmds-generator');           // 生成需要执行的 git 命令
 const executeCmdsGenerator = require('./execute-cmds-generator');   // 生成需要执行的操作命令
 const cmdsExecutor = require('./cmds-executor');                    // 命令执行器
+const config = require('../config');
 
 const GitLabHook = function(_options, _callback) {
   if (!(this instanceof GitLabHook)) {
@@ -29,36 +30,12 @@ const GitLabHook = function(_options, _callback) {
     options =  _options;
   }
   options = options || {};
-  this.configFile = 'config/index.js';
-  this.configPathes = '.';
   this.port = options.port || 3420;
   this.host = options.host || '0.0.0.0';
   this.callback = callback;
+  this.tasks = config.tasks;
 
-  let active = false;
-  if (typeof callback == 'function') {
-    active = true;
-  } else {
-    cfg = readConfigFile(this.configPathes, this.configFile);
-    if (cfg) {
-      info('loading config file: ' + this.configFile);
-      info('config file:\n' + inspect(cfg));
-      for (let i in cfg) {
-        if (i == 'tasks' && typeof cfg.tasks == 'object' && Object.keys(cfg.tasks).length) {
-          this.tasks = cfg.tasks;
-          active = true;
-        } else {
-          this[i] = cfg[i];
-        }
-      }
-    } else {
-      error('can\'t read config file: ', this.configFile);
-    }
-  }
-
-  if (active) {
-    this.server = Http.createServer(serverHandler.bind(this));
-  }
+  this.server = Http.createServer(serverHandler.bind(this));
 };
 
 GitLabHook.prototype.listen = function(callback) {

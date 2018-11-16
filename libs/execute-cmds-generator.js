@@ -27,9 +27,11 @@ module.exports = (task, formatData, gitCmds, version) => {
   const cmdStr = repoConfig['ssh-host'] != undefined ?
     `${repoConfig['ssh-host']} '${cdCmdStr}'` : cdCmdStr;
 
-  warn('[DEBUG LOG] isTag:\t\t', isTag);
-  warn('[DEBUG LOG] isBranchDelete:\t', isBranchDelete);
-  warn('[DEBUG LOG] cmdStr:\t\t', cmdStr);
+  if (process.env.NODE_ENV !== 'test') {
+    warn('[DEBUG LOG] isTag:\t\t', isTag);
+    warn('[DEBUG LOG] isBranchDelete:\t', isBranchDelete);
+    warn('[DEBUG LOG] cmdStr:\t\t', cmdStr);
+  }
 
   ret.push(cmdStr);
   return ret;

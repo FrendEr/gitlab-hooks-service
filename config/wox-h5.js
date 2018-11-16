@@ -27,4 +27,18 @@ module.exports = {
       'deploy-dir': '/data/h5static/h5static-deploy'
     }
   },
+  'firebug/icp': {
+    'name': 'icp',
+    'git-url': 'ssh://git@gitlab.quimg.com/firebug/icp.git',
+    'daily': {
+      'ssh-host': 'ssh frend@192.168.0.4',
+      'git-repo': '/data/h5static/h5static-git',
+      'deploy-dir': '/data/h5static/h5static-deploy'
+    },
+    'publish': {
+      'ssh-host': 'ssh -p 60886 frend@111.101.2.10',
+      'git-repo': '/data/h5static/h5static-git',
+      'deploy-dir': '/data/h5static/h5static-deploy'
+    }
+  },
 };

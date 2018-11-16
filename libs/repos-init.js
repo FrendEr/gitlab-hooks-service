@@ -4,11 +4,7 @@
  * 通过获取 `config` 目录下的项目配置信息，判断服务器是否已经存在对应的目录，如果没有则创建源代码仓库目录以及部署目录
 */
 const cmdsExecutor = require('./cmds-executor');
-const readConfigFile = require('../utils/read-config-file');
-
-const configFile = 'config/index.js';
-const configPathes = '.';
-const cfg = readConfigFile(configPathes, configFile);
+const cfg = require('../config');
 let tasks = null;
 const cmds = [];
 

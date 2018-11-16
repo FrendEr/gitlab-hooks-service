@@ -7,23 +7,34 @@ const deleteFromMaster = require('../mock/delete-from-master');
 const deleteBranchDaily = require('../mock/delete-branch-daily');
 
 describe('#dataParser', () => {
-  it('should return correct commit push-branch-daily', () => {
-    dataParser(pushBranchDaily).should.deep.eq({
-      isTag: false,
-      tagName: '',
-      branchName:'daily/0.0.1',
-      isBranchDelete:false
-    });
-  });
-  it('should return correct commit push-branch-master', () => {
+  /**
+   * push events
+   */
+  it('should return correct data for `push master branch`', () => {
     dataParser(pushBranchMaster).should.deep.eq({
       isTag: false,
       tagName: '',
-      branchName:'master',
-      isBranchDelete:false
+      branchName: 'master',
+      isBranchDelete: false
     });
   });
-  it('should return correct commit push-tag-publish', () => {
+  it('should return correct data for `push dev branch`', () => {
+    dataParser(pushFromMaster).should.deep.eq({
+      isTag: false,
+      tagName: '',
+      branchName: 'dick-from-master',
+      isBranchDelete: false
+    });
+  });
+  it('should return correct data for `push daily branch`', () => {
+    dataParser(pushBranchDaily).should.deep.eq({
+      isTag: false,
+      tagName: '',
+      branchName: 'daily/0.0.1',
+      isBranchDelete: false
+    });
+  });
+  it('should return correct data for `push publish tag`', () => {
     dataParser(pushTagPublish).should.deep.eq({
       isTag: true,
       tagName: 'publish/0.0.1',
@@ -31,28 +42,24 @@ describe('#dataParser', () => {
       isBranchDelete:false
     });
   });
-  it('should return correct commit push-from-master', () => {
-    dataParser(pushFromMaster).should.deep.eq({
-      isTag: false,
-      tagName: '',
-      branchName:'dick-from-master',
-      isBranchDelete:false
-    });
-  });
-  it('should return correct commit delete-from-master', () => {
+
+  /**
+   * delete events
+   */
+  it('should return correct data for `delete dev branch`', () => {
     dataParser(deleteFromMaster).should.deep.eq({
       isTag: false,
       tagName: '',
-      branchName:'dick-from-master',
-      isBranchDelete:true
+      branchName: 'dick-from-master',
+      isBranchDelete: true
     });
   });
-  it('should return correct commit delete-branch-daily', () => {
+  it('should return correct data for `delete daily branch`', () => {
     dataParser(deleteBranchDaily).should.deep.eq({
       isTag: false,
       tagName: '',
-      branchName:'daily/0.0.1',
-      isBranchDelete:true
+      branchName: 'daily/0.0.1',
+      isBranchDelete: true
     });
   });
 });
