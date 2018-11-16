@@ -52,23 +52,23 @@ gitlab 前端自动部署服务
 
 * **发布到测试环境**
 
-  1、 从 **master** 拉取开发分支 **dev_from_master**
+  i.  从 **master** 拉取开发分支 **dev_from_master**
   ```
   $ git checkout -b dev_from_master
   ```
 
-  2、 开发完后提 `merge request` 到 **master** 分支
+  ii. 开发完后提 `merge request` 到 **master** 分支
 
-  3、 点击 `Merge` 将开发分支 **dev_from_master** 合并到 **master**，系统将自动触发测试环境的代码部署
+  iii. 点击 `Merge` 将开发分支 **dev_from_master** 合并到 **master**，系统将自动触发测试环境的代码部署
 
 * **发布到生产环境**
 
-  1、 切换到 **master** 分支并拉取最新的代码
+  i. 切换到 **master** 分支并拉取最新的代码
   ```
   $ git pull origin master
   ```
 
-  2、 创建 **tag** 并提交
+  ii. 创建 **tag** 并提交
   ```
   $ git tag publish/x.y.z             // tag 必须符合 `publish/x.y.z` 的命名规则
   $ git push origin publish/x.y.z
@@ -78,37 +78,37 @@ gitlab 前端自动部署服务
 
 * **发布到测试环境**
 
-  1、 从 **master** 分支拉取测试分支 **daily/x.y.z**
+  i. 从 **master** 分支拉取测试分支 **daily/x.y.z**
   ```
   $ git checkout -b daily/x.y.z       // 测试分支必须符合 `daily/x.y.z` 的命名规则
   ```
 
-  2、 从测试分支 **daily/x.y.z** 拉取开发分支 **dev_from_daily/x.y.z**
+  ii. 从测试分支 **daily/x.y.z** 拉取开发分支 **dev_from_daily/x.y.z**
   ```
   $ git checkout -b dev_from_daily/x.y.z
   ```
 
-  3、 开发完后提 `merge request` 到 **daily/x.y.z** 分支
+  iii. 开发完后提 `merge request` 到 **daily/x.y.z** 分支
 
-  4、 点击 `Merge` 将开发分支合并到 **daily/x.y.z**，系统将自动触发测试环境的代码部署
+  iv. 点击 `Merge` 将开发分支合并到 **daily/x.y.z**，系统将自动触发测试环境的代码部署
 
 * **发布到生产环境**
 
-  1、 切换到 **daily/x.y.z** 分支并拉取最新的代码
+  i. 切换到 **daily/x.y.z** 分支并拉取最新的代码
   ```
   $ git pull origin daily/x.y.z
   ```
 
-  2、 从测试分支 **daily/x.y.z** 提 `merge request` 到 **master** 分支
+  ii. 从测试分支 **daily/x.y.z** 提 `merge request` 到 **master** 分支
 
-  3、 点击 `Merge` 将测试分支 **daily/x.y.z** 合并到 **master**
+  iii. 点击 `Merge` 将测试分支 **daily/x.y.z** 合并到 **master**
 
-  4、 切换到 **master** 分支并拉取最新的代码
+  iv. 切换到 **master** 分支并拉取最新的代码
   ```
   $ git pull origin master
   ```
 
-  5、 创建 **tag** 并提交
+  v. 创建 **tag** 并提交
   ```
   $ git tag publish/x.y.z             // tag 必须符合 `publish/x.y.z` 的命名规则
   $ git push origin publish/x.y.z
