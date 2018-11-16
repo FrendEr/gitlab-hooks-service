@@ -19,7 +19,7 @@ gitlab 前端自动部署服务
 
 #### 1、设置项目 **Webhooks**
 
-项目 -> *Settings* -> *Integrations* -> 添加 *URL* —— `http://gitlabhook.quimg.com`，并勾选 `☑️ Push events` 以及 `☑️ Tag push events`
+项目 -> *Settings* -> *Integrations* -> 添加 *URL* —— `http://gitlab-hooks-service.com`，并勾选 `☑️ Push events` 以及 `☑️ Tag push events`
 
 #### 2、在 **[config 目录](./config)** 增加项目配置
 
