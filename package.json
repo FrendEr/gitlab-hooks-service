@@ -1,0 +1,23 @@
+{
+  "name": "gitlab-hooks-service",
+  "version": "1.0.0",
+  "description": "gitlab hooks service",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "deploy": "pm2 start server.js",
+    "test": "mocha ./*/*-spec.js"
+  },
+  "author": "FrendEr",
+  "license": "MIT",
+  "dependencies": {
+    "json5": "^1.0.1",
+    "temp": "^0.8.3"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
+  }
+}

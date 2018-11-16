@@ -1,0 +1,41 @@
+module.exports = {
+  object_kind: 'push',
+  event_name: 'push',
+  before: '1927c477773281af32880915e7d5dc697660d014',
+  after: '0000000000000000000000000000000000000000',
+  ref: 'refs/heads/dick-from-master',
+  checkout_sha: null,
+  message: null,
+  user_id: 3,
+  user_name: 'frend.wang',
+  user_email: 'frend.wang@ipptravel.com',
+  user_avatar: 'http://gitlab.quimg.com:38000/uploads/system/user/avatar/3/avatar.png',
+  project_id: 48,
+  project: {
+    name: 'hooks-test-project',
+    description: 'gitlab hooks 测试项目',
+    web_url: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project',
+    avatar_url: null,
+    git_ssh_url: 'ssh://git@gitlab.quimg.com:38001/firebug/hooks-test-project.git',
+    git_http_url: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project.git',
+    namespace: 'firebug',
+    visibility_level: 0,
+    path_with_namespace: 'firebug/wox-admin/global',
+    default_branch: 'master',
+    homepage: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project',
+    url: 'ssh://git@gitlab.quimg.com:38001/firebug/hooks-test-project.git',
+    ssh_url: 'ssh://git@gitlab.quimg.com:38001/firebug/hooks-test-project.git',
+    http_url: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project.git'
+  },
+  commits: '',
+  total_commits_count: 0,
+  repository: {
+    name: 'hooks-test-project',
+    url: 'ssh://git@gitlab.quimg.com:38001/firebug/hooks-test-project.git',
+    description: 'gitlab hooks 测试项目',
+    homepage: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project',
+    git_http_url: 'http://gitlab.quimg.com:38000/firebug/hooks-test-project.git',
+    git_ssh_url: 'ssh://git@gitlab.quimg.com:38001/firebug/hooks-test-project.git',
+    visibility_level: 0
+  }
+}
