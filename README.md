@@ -27,24 +27,22 @@ gitlab 前端自动部署服务
 // config/wox-admin.js
 
 {
-  "tasks": {
-    "firebug/wox-admin/compare-tool": {                            // 项目路径：group_name/repository_name
-      "versionControl": false,                                     // 是否使用版本控制，默认为 true
-      "needInit": true,                                            // 是否需要初始化仓库与目录（新增的部署项目才需要）
-      "name": "compare-tool",                                      // 项目名称      
-      "daily": {                                                   // 测试环境配置
-        "ssh-host": "ssh frend@192.168.0.19",                      // 登录测试环境
-        "git-repo": "/home/frend/build-trunk/front-wox-git",       // 测试环境项目仓库地址
-        "deploy-dir": "/home/frend/build-trunk/front-wox-deploy"   // 测试环境项目部署地址
-      },
-      "publish": {                                                 // 生产环境配置
-        "ssh-host": "ssh -p 60886 frend@111.101.2.10",             // 登录生产环境
-        "git-repo": "/data/www/woqu/static/front-wox-git",         // 生产环境项目仓库地址
-        "deploy-dir": "/data/www/woqu/static/front-wox-deploy"     // 生产环境项目部署地址
-      }
+  "firebug/wox-admin/compare-tool": {                            // 项目路径：group_name/repository_name
+    "versionControl": false,                                     // 是否使用版本控制，默认为 true
+    "needInit": true,                                            // 是否需要初始化仓库与目录（新增的部署项目才需要）
+    "name": "compare-tool",                                      // 项目名称      
+    "daily": {                                                   // 测试环境配置
+      "ssh-host": "ssh frend@192.168.0.19",                      // 登录测试环境
+      "git-repo": "/home/frend/build-trunk/front-wox-git",       // 测试环境项目仓库地址
+      "deploy-dir": "/home/frend/build-trunk/front-wox-deploy"   // 测试环境项目部署地址
     },
-    ...
-  }
+    "publish": {                                                 // 生产环境配置
+      "ssh-host": "ssh -p 60886 frend@111.101.2.10",             // 登录生产环境
+      "git-repo": "/data/www/woqu/static/front-wox-git",         // 生产环境项目仓库地址
+      "deploy-dir": "/data/www/woqu/static/front-wox-deploy"     // 生产环境项目部署地址
+    }
+  },
+  ...
 }
 ```
 
