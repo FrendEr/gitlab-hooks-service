@@ -59,7 +59,7 @@ function execute(cmds, path, repo, task, formatData, version) {
             <br />
             <p><strong>📝 项目名称：</strong><a href="http://gitlab.quimg.com:38000/${repo}" target="_blank">${repo}</a></p>
             <p><strong>🖥 发布环境：</strong>${isTag ? '生产' : '测试'}</p>
-            <p><strong>🛠 发布${isTag ? 'Tag' : '分支'}：</strong>${isTag ? 'publish/' + version : 'daily/' + version}</p>
+            <p><strong>🛠 发布${isTag ? 'Tag' : '分支'}：</strong>${version ? isTag ? 'publish/' + version : 'daily/' + version : '无版本控制'}</p>
             <br />
             <p style="font-size: 13px;color: #666;">🚨 该发布消息仅检测服务端脚本执行过程，静态资源服务更新仍有失败几率，若更新有问题请联系 @Frend</p>
           </div>`
@@ -115,7 +115,7 @@ function execute(cmds, path, repo, task, formatData, version) {
       }
       process.stderr.write(stderr);
       idx++;
-      execute(cmds, path);
+      execute(cmds, path, repo, task, formatData, version);
     });
   });
 }
