@@ -75,14 +75,14 @@ function executeShellCmds(self, address, data) {
   if (
     (versionControl && !version) ||        // 如果开启版本控制，但是不符合 `x.y.z` 的版本号规则，则不进入命令执行阶段
     (isBranchDelete && !version) ||        // 如果删除无版本分支 则不进入命令执行阶段
-    (!master && !version)                  // 如果不是 master 提交，且没有版本号， 则不进入命令执行阶段
+    (!master && !version)                  // 如果不是 master 提交，且没有版本号，则不进入命令执行阶段
   ) {
     return;
   }
 
   const cmds = executeCmdsGenerator(task, formatData, gitCmds, version);
 
-  cmdsExecutor(cmds);
+  cmdsExecutor(cmds, repo, task, formatData, version);
 }
 
 function serverHandler(req, res) {

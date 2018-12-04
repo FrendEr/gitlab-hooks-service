@@ -7,6 +7,7 @@ module.exports = (data) => {
   const type = data.event_name;   // 'push' | 'tag_push'
   const ref = data.ref;           // 'refs/heads/daily/0.0.1' | 'refs/heads/master' | 'refs/tags/publish/0.0.1'
   const after = data.after;
+  const userEmail = data.user_email;
   const isTag = type === 'tag_push' ? true : false;
   const tagName = isTag ? ref.replace('refs/tags/', '') : '';
   const branchName = isTag ? '' : ref.replace('refs/heads/', '');
@@ -17,5 +18,6 @@ module.exports = (data) => {
     tagName,
     branchName,
     isBranchDelete,
+    userEmail,
   };
 }
