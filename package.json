@@ -10,6 +10,10 @@
   },
   "author": "FrendEr",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrendEr/gitlab-hooks-service"
+  },
   "dependencies": {
     "json5": "^1.0.1",
     "nodemailer": "^4.7.0",
